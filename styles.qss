@@ -1,0 +1,74 @@
+QLineEdit#Display {
+    color: black;
+    background: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0.0625 rgba(161, 168, 99, 255), stop:1 rgba(223, 231, 188, 255));
+    font: 20pt "Arial";
+    border-color: rgb(72, 72, 72);
+    border-style: solid;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+}
+
+QPushButton {
+    font: 500 11pt "Arial";
+    border-color: rgb(79, 79, 79);
+    border-style: solid;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+    border-radius: 3px;
+}
+
+QPushButton:pressed, QPushButton:on {
+    margin-left: 4px;
+    margin-top: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+}
+
+QPushButton#Number {
+    color: white;
+    background: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(80, 80, 80, 255), stop:1 rgba(199, 199, 199, 255));
+	border-color: rgb(79, 79, 79);
+}
+
+QPushButton#Calc {
+    color: rgb(0, 85, 0);
+    background: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(80, 240, 110, 255), stop:1 rgba(80, 240, 175, 255));
+	border-color: rgb(0, 157, 0);
+}
+
+QPushButton#Clear {
+    background: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(180, 0, 0, 255), stop:1 rgba(255, 130, 130, 255));
+    border-color: rgb(138, 0, 0);
+    color: rgb(255, 223, 223);
+}
+
+QPushButton#Oper {
+	background: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(0, 98, 196, 255), stop:1 rgba(136, 196, 255, 255));
+    border-color: rgb(0, 75, 151);
+    color: rgb(217, 236, 255);
+}
+
+QPushButton#More {
+    background: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(179, 179, 0, 255), stop:1 rgba(255, 255, 140, 255));
+    border-color: rgb(100, 100, 0);
+    color: rgb(80, 80, 0);
+}
+
+QPushButton#Mode {
+    color: black;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(187, 158, 41, 255), stop:1 rgba(255, 231, 156, 255));
+    border-color: rgb(122, 102, 0);
+}
+
+QWidget {
+    background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(138, 138, 138, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QLabel#lblPrec {
+    border: 1px solid black;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(187, 158, 41, 255), stop:1 rgba(255, 231, 156, 255));
+}
