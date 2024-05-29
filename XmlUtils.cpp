@@ -1,13 +1,30 @@
 #include "XmlUtils.h"
 #include <QFile>
+#include <QApplication>
 
 namespace XML
 {
+    const QString CONFIG_FILE_NAME = "config.xml";
+
+    QString combineAbsoluteAppPath(const QString& fileName)
+    {
+        QString appDir = QApplication::applicationDirPath();
+        if (QDir::separator() == '\\')
+            appDir = appDir.replace('/', '\\');
+        else
+            appDir = appDir.replace('\\', '/');
+
+        if (appDir.back() != QDir::separator())
+            appDir.append(QDir::separator());
+
+        return appDir + fileName;
+    }
+
     QDomDocument getDoc(const QString& fileName)
     {
         QDomDocument doc;
 
-        QFile file(fileName);
+        QFile file(combineAbsoluteAppPath(fileName));
         if (file.open(QFile::ReadOnly))
             doc.setContent(file.readAll());
         file.close();
@@ -43,7 +60,7 @@ namespace XML
     {
         AppConfig conf;
 
-        QDomDocument doc = getDoc("config.xml");
+        QDomDocument doc = getDoc(CONFIG_FILE_NAME);
         QDomElement winPosElem = getElem(doc.documentElement(), "winPos");
 
         bool posXok = false, posYok = false, precOk = false;
@@ -86,7 +103,7 @@ namespace XML
         root.appendChild(calcPrec);
         doc.appendChild(root);
 
-        QFile file("config.xml");
+        QFile file(combineAbsoluteAppPath(CONFIG_FILE_NAME));
         if (!file.open(QFile::WriteOnly | QFile::Text))
             return false;
 
